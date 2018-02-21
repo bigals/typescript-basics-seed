@@ -1,29 +1,11 @@
-interface Pizza {
-    name: string;
-    price: number;
-    getName(): string
-}
-interface Order {
-    pizza: Pizza,
-    toppings: string[]
-}
-
-const pizza:Pizza = {
-    name: 'Pepperoni',
-    price: 15,
-    getName: (): string => {
-        return pizza.name;
-    }
-};
-
-
-const toppings: string[] = [ 'pepperoni' ];
-const order: Order = { pizza, toppings };
-
-function createOrder(pizza: Pizza, toppings: string[]) {
-    return { pizza, toppings };
+function sumAll(message: any, ...arr: any[]) {
+    console.log(arguments);
+    console.log(
+        '---------------------------'
+    );
+    console.log(message);
+    return arr.reduce((prev: any, next:any ) => prev + next );
 }
 
-console.log(order);
-console.log(createOrder(pizza, toppings));
-
+const sum = sumAll('HELLO',1, 2, 3, 4, 5, 6, 7, 8, 9, 10 );
+console.log(sum);
