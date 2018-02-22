@@ -1,7 +1,34 @@
-const toppings = [ 'bacon', 'chilli' ];
+const pizza = {
+  name: "Pepperoni",
+  toppings: ["pepperoni"]
+};
 
-const newToppings = [ 'pepperoni' ];
+let order = ({
+  name: pizzaName,
+  toppings: pizzaToppings
+}: {
+  name: string;
+  toppings: string[];
+}) => {
+  return { pizzaName, pizzaToppings };
+};
 
-const allToppings = [ ...toppings, ...newToppings ];
+const myOrder = order(pizza);
+console.log(myOrder);
 
-console.log(allToppings);
+const { pizzaName } = order(pizza);
+console.log(pizzaName);
+
+const toppings = [ 'pepperoni', 'bacon', 'chilli' ];
+
+const [ first, second, third ] = toppings;
+
+console.log(first);
+console.log(second);
+console.log(third);
+
+function logToppings([ first, second, third ]: any) {
+    console.log(first, second, third);
+}
+
+logToppings(toppings);
