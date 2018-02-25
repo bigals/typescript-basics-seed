@@ -1,14 +1,7 @@
-interface Pizza {
-    name: string;
-    price: number;
-    getName(): string;
-}
-let pizza: Pizza;
+let sizes: number[];
 
-pizza = {
-    name: 'Plain Old Pepperoni',
-    price: 20,
-    getName: () => pizza.name
-}
+sizes = [ 1, 2, 3 ];
 
-console.log(pizza.getName());
+let toppings: Array<string>;
+
+toppings = [ 'pepperoni', 'tomato', 'bacon' ];
