@@ -1,10 +1,14 @@
+interface Pizza {
+    name: string;
+    price: number;
+    getName(): string;
+}
+let pizza: Pizza;
 
+pizza = {
+    name: 'Plain Old Pepperoni',
+    price: 20,
+    getName: () => pizza.name
+}
 
-let sumOrder: (price: number, quantity?: number) => number;
-
-sumOrder = (x, y = 1) => x * y;
-
-const sum = sumOrder(25);
-sumOrder(25, 2);
-
-console.log(`Total sum Named: ${ sum }`);
+console.log(pizza.getName());
