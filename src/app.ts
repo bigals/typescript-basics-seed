@@ -1,25 +1,10 @@
-let pizzaSize: string = 'small';
-
-function selectSize(size: 'small' | 'medium' | 'large'): void {
-    pizzaSize = size;
-}
-
-console.log(`Pizza size before selection: ${ pizzaSize }`);
-
-selectSize('large');
-
-console.log(`Pizza size after selection: ${ pizzaSize }`);
 
 
-//Example 2
-let pizzaSize2: number = 1;
+let sumOrder: (price: number, quantity: number) => number;
 
-function selectSize2(size: 1 | 2 | 3): void {
-    pizzaSize2 = size;
-}
+sumOrder = (x, y) => x * y;
 
-console.log(`Pizza size before selection: ${ pizzaSize2 }`);
 
-selectSize2(2);
+const sum = sumOrder(25, 2);
 
-console.log(`Pizza size after selection: ${ pizzaSize2 }`);
+console.log(`Total sum Named: ${ sum }`);
