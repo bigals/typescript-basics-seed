@@ -1,4 +1,4 @@
-abstract class Sizes {
+class Sizes {
     constructor (public sizes: string[]) { }
 
     set availableSizes(sizes: string[]) {
@@ -9,9 +9,9 @@ abstract class Sizes {
     }
 }
 
-class Pizza extends Sizes{
-    constructor (readonly name: string) {
-        super([ 'small', 'medium' ]);
+class Pizza extends Sizes {
+    constructor (readonly name: string, sizes: string[]) {
+        super(sizes);
     }
     public toppings: string[] = [];
 
@@ -20,8 +20,9 @@ class Pizza extends Sizes{
     }
 }
 
-const pizza = new Pizza('Pepperoni');
+const pizza = new Pizza('Pepperoni', ['small', 'medium']);
 
 pizza.addTopping('Pepperoni');
 
 console.log(pizza);
+console.log(pizza.availableSizes);
