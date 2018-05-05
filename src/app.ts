@@ -1,4 +1,4 @@
-class Sizes {
+abstract class Sizes {
     constructor (public sizes: string[]) { }
 
     set availableSizes(sizes: string[]) {
@@ -9,17 +9,10 @@ class Sizes {
     }
 }
 
-const sizes = new Sizes([ 'small', 'medium' ]);
-
-//invoke getter
-console.log(sizes.availableSizes);
-
-//invoke setter
-sizes.availableSizes = [ 'medium', 'large' ];
-console.log(sizes.availableSizes);
-
-class Pizza {
-    constructor (readonly name: string) {}
+class Pizza extends Sizes{
+    constructor (readonly name: string) {
+        super([ 'small', 'medium' ]);
+    }
     public toppings: string[] = [];
 
     public addTopping(topping: string) {
