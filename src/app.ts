@@ -1,13 +1,10 @@
-interface Pizza {
-    name: string;
+interface Sizes {
     sizes: string[];
-    getAvailableSizes(): string[];
 }
 
-//this shows how type operator specifys funcion types, above shows the interface pattern
-type getAvailableSizes = () => string[];
-interface Pizzas {
-    data: Pizza[]
+interface Pizza extends Sizes {
+    name: string;
+    getAvailableSizes(): string[];
 }
 
 let pizza: Pizza;
