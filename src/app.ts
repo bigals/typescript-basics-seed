@@ -1,11 +1,11 @@
 type Pizza = { name: string, toppings: number };
 
-const pizza: Pizza = { name: 'Blazing Inerno', toppings: 5 }
+const pizza: Pizza = { name: 'Blazing Inferno', toppings: 5 };
 
 const serialized = JSON.stringify(pizza);
 
-function getNameFromJSON(obj: string): Pizza {
-    return (<Pizza<Pizza>JSON.parse(obj)).name;
+function getNameFromJSON(obj: string) {
+    return (JSON.parse(obj) as Pizza).name;
 }
 
 getNameFromJSON(serialized);
